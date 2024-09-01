@@ -1,1 +1,24 @@
-<p>designation works!</p>
+<div>
+    <h1 class="my-3 font-serif text-xl">Employees</h1>
+    <div>
+        <table class="min-w-full divide-y divide-gray-200 capitalize">
+            <thead class="bg-gray-50">
+                <tr>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">#</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">designation</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
+                </tr>
+            </thead>
+            <tbody class="bg-white divide-y divide-gray-200">
+                <tr *ngFor="let item of designationList">
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.designationId}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.designation}}</td>
+                    <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">
+                        <a href="{{item.designationId}}" class="mx-2 hover:underline hover:text-green-600">edit</a>
+                        <a href="{{item.designationId}}" class="mx-2 hover:underline hover:text-red-600">Delete</a>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
