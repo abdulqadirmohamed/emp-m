@@ -12,12 +12,14 @@ import { CommonModule } from '@angular/common';
 })
 export class DesignationComponent implements OnInit {
   designationList: IDesignation[] = [];
+  isloading:boolean = true;
 
   masterService = inject(MasterService)
 
   ngOnInit(): void {
     this.masterService.getDesignation().subscribe((result)=>{
-      this.designationList =  result.data
+      this.designationList =  result.data;
+      this.isloading = false
     }), console.error('network down');
     ;
     

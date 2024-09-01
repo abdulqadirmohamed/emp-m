@@ -14,6 +14,7 @@ import { CommonModule } from '@angular/common';
 export class RolesComponent implements OnInit {
 
   roleList: IRole[] = []
+  isLoading:boolean = true;
   http = inject(HttpClient)
 
   ngOnInit(): void {
@@ -24,6 +25,7 @@ export class RolesComponent implements OnInit {
     this.http.get<apiResponseModel>('https://freeapi.miniprojectideas.com/api/EmployeeApp/GetAllRoles')
       .subscribe((res: apiResponseModel) => {
         this.roleList = res.data
+        this.isLoading = false
       })
   }
 
