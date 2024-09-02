@@ -8,7 +8,8 @@ import { environment } from '../../environments/environment';
   providedIn: 'root',
 })
 export class MasterService {
-  private url = `${environment.API_URL}/GetAllDesignation`;
+
+  private url = `https://freeapi.miniprojectideas.com/api/EmployeeApp/GetAllDesignation`;
 
   constructor(private http: HttpClient) { }
 

@@ -3,6 +3,7 @@ import { Client } from '../../model/Client';
 import { FormsModule } from '@angular/forms';
 import { ClientService } from '../../services/client/client.service';
 import { NgFor } from '@angular/common';
+import { apiResponseModel } from '../../model/interface/role';
 
 @Component({
   selector: 'app-client',
@@ -25,6 +26,12 @@ export class ClientComponent implements OnInit {
   }
 
   onSaveClient = () =>{
-    alert('saved')
+    this.clientService.postUpdateClient(this.clientObj).subscribe((res:apiResponseModel)=>{
+      if(res.result){
+        alert('client created sucessfull')
+      }else{
+        alert(res.message)
+      }
+    })
   }
 }

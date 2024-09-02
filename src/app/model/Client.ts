@@ -1,13 +1,13 @@
 export class Client {
     clientId: number
-    personName: string
+    contactPersonName: string
     companyName: string
     contactNo: string
     city: string
 
     constructor() {
         this.clientId = 0
-        this.personName = ''
+        this.contactPersonName = ''
         this.companyName = ''
         this.contactNo = ''
         this.city = ''

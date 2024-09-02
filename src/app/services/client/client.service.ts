@@ -10,9 +10,11 @@ import { apiResponseModel } from '../../model/interface/role';
 })
 export class ClientService {
 
-  private getAllClientsUrl = `${environment.API_URL}/GetAllDesignation`
-  private PostUpdateUrl = `${environment.API_URL}/GetAllDesignation/`
-  private deleteUrl = `${environment.API_URL}/GetAllDesignation/DeleteEmployeeByEmpId?empId=`
+    private API_URL:string = 'https://freeapi.miniprojectideas.com/api/ClientStrive'
+
+  private getAllClientsUrl = `https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllClients`
+  private PostUpdateUrl = `${this.API_URL}/AddUpdateClient`
+  private deleteUrl = `${this.API_URL}/GetAllDesignation/DeleteClientByClientId?clientId=`
 
   constructor(private http: HttpClient) { }
 
