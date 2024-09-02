@@ -7,10 +7,12 @@ import { HeaderComponent } from "./components/header/header.component";
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, RouterLink, RouterLinkActive, RolesComponent, MasterComponent, HeaderComponent],
+  imports: [RouterOutlet, RolesComponent, MasterComponent, HeaderComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
+
+
 export class AppComponent {
   title = 'employee-management';
 }
