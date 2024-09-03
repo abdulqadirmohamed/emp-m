@@ -12,7 +12,7 @@ export class ClientService {
 
     private API_URL:string = 'https://freeapi.miniprojectideas.com/api/ClientStrive'
 
-  private getAllClientsUrl = `https://freeapi.miniprojectideas.com/api/ClientStrive/GetAllClients`
+  private getAllClientsUrl = `http://localhost:3000/api/customers`
   private PostUpdateUrl = `${this.API_URL}/AddUpdateClient`
   private deleteUrl = `${this.API_URL}/GetAllDesignation/DeleteClientByClientId?clientId=`
 

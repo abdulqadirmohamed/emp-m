@@ -1,10 +1,19 @@
 <nav class="border-b py-3 relative mb-10">
   <ul class="flex gap-5">
-    <li><a href="/" routerLinkActive="border-b-2 border-black py-3"
-        [routerLinkActiveOptions]="{ exact: true }">Master</a> </li>
-    <li><a routerLink="/employee" routerLinkActive="border-b-2 border-black py-3"
-        [routerLinkActiveOptions]="{ exact: true }">Employee</a> </li>
-    <li><a routerLink="/client" routerLinkActive="border-b-2 border-black py-3"
-        [routerLinkActiveOptions]="{ exact: true }">Client</a> </li>
+    <li>
+      <a href="/" routerLinkActive="border-b-2 border-black py-3" [routerLinkActiveOptions]="{ exact: true }">Master</a>
+    </li>
+    <li>
+      <a routerLink="/items" routerLinkActive="border-b-2 border-black py-3"
+        [routerLinkActiveOptions]="{ exact: true }">Items</a>
+    </li>
+    <li>
+      <a routerLink="/employee" routerLinkActive="border-b-2 border-black py-3"
+        [routerLinkActiveOptions]="{ exact: true }">Employee</a>
+    </li>
+    <li>
+      <a routerLink="/client" routerLinkActive="border-b-2 border-black py-3"
+        [routerLinkActiveOptions]="{ exact: true }">Client</a>
+    </li>
   </ul>
 </nav>

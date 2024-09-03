@@ -13,3 +13,6 @@ export interface apiResponseModel {
     result: boolean
     data: any
 }
+export interface IItems{
+    data: any
+}

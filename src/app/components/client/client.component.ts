@@ -16,20 +16,22 @@ export class ClientComponent implements OnInit {
 
   clientObj: Client = new Client()
   clientList: Client[] = []
+  isLoading:boolean = true;
 
   clientService = inject(ClientService)
 
   ngOnInit(): void {
-    this.clientService.getAllClients().subscribe((result)=>{
+    this.clientService.getAllClients().subscribe((result) => {
       this.clientList = result.data;
+      this.isLoading = false;
     })
   }
 
-  onSaveClient = () =>{
-    this.clientService.postUpdateClient(this.clientObj).subscribe((res:apiResponseModel)=>{
-      if(res.result){
+  onSaveClient = () => {
+    this.clientService.postUpdateClient(this.clientObj).subscribe((res: apiResponseModel) => {
+      if (res.result) {
         alert('client created sucessfull')
-      }else{
+      } else {
         alert(res.message)
       }
     })

@@ -1,18 +1,18 @@
-<div class="grid grid-cols-6 gap-4">
-    <div class="col-span-4 border rounded-md">
+<div class="grid  gap-4">
+    <div class="border rounded-md">
         <div class="bg-blue-700 text-white py-2 rounded-t-md">
-            <h1 class="px-6 font-semibold">Client List</h1>
+            <h1 class="px-6 font-semibold">Items List</h1>
         </div>
         <table class="min-w-full">
             <thead class="bg-gray-50">
                 <tr>
                     <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Sr No
                     </th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Name</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Phone</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">created_at
-                        no</th>
-                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">updated_at</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Item name</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">rate</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">open meter</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">close meter</th>
+                    <th class="px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider">Action</th>
                 </tr>
             </thead>
             @if(isLoading == true){
@@ -25,21 +25,17 @@
                 </div>
             }@else{
             <tbody>
-                    <tr *ngFor="let item of clientList">
+                    <tr *ngFor="let item of itemList">
                         <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.id}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.name}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.phone}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.created_at}}</td>
-                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.updated_at}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.item_name}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.item_rate}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.open_meter_reading}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900">{{item.close_meter_reading}}</td>
+                        <td class="px-6 py-4 whitespace-nowrap text-sm font-medium text-gray-900"><button class="hover:text-red-600" (click)="deleteItem(item.id)">Delete</button></td>
                     </tr>
                 </tbody>
             }
         </table>
     </div>
-    <div class="col-span-2 border rounded-md">
-        <div class="bg-blue-700 text-white py-2 rounded-t-md">
-            <h1 class="px-6 font-semibold">New client</h1>
-        </div>
-        
-    </div>
+    
 </div>
